@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <title>form Example</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="formstyle.css">
+</head>
+<SCRIPT src="connectdata.js"></SCRIPT>
+<body>
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-4 col-xs-1"></div>
+			<div class="col-lg-4 col-xs-10">
+				<form role = "form" class="STYLE-NAME">
+					<h2>Contact Form 
+        				<span>Please fill all the texts in the fields.</span>
+    				</h2>
+					Name:<input type = "text" class = "form-control" id = "name" placeholder = "Enter Name" value="Ashok">
+
+					age:<input type = "number" class = "form-control" id = "age" placeholder = "Enter student age">
+			
+					Gender :<input type = "radio" name = "radiosb" id = "r1" value = "Male">Male
+							<input type = "radio" name = "radiosb" id = "r2" value = "Female">Female<br>
+					subject:<input type="checkbox" id="c1" value="c">C
+							<input type="checkbox" id="c2" value="c++">C++
+							<input type="checkbox" id="c3" value="java">Java<br>
+					passing year:
+					<select name="year" id="yr">
+						<option></option>
+						<option value="2010">2010</option>
+						<option value="2011">2011</option>
+						<option value="2012">2012</option>
+						<option value="2013">2013</option>
+						<option value="2014">2014</option>
+						<option value="2015">2015</option>
+					</select><br>
+
+					E-mail:<input type = "text" class = "form-control" id = "email" placeholder = "Enter email">
+
+					Phone:<input type = "text" class = "form-control" id = "phone" placeholder = "Enter phone number">
+
+				    <input type = "submit" class = "form-control" id = "sub" value="submit" onclick="getdata();">
+				</form>
+			</div>
+			<div class="col-lg-4 col-xs-1"></div>
+		</div>
+
+	</div>
+</body>
+</html>
