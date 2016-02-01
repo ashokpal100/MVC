@@ -1,0 +1,82 @@
+<!DOCTYPE html PUBLIC>
+<html >
+<head>
+    <title></title>
+    <script type="text/javascript" >
+        function InsertRecord()
+        {
+            var name1 = document.getElementById('name').value;
+            var rolln= document.getElementById('roll').value;
+            if (name.length != 0 || roll.length !=0 )
+            {
+                var connection = new ActiveXObject("ADODB.Connection");
+                var connectionstring = "Data Source=.;Initial Catalog=system;Persist Security Info=True;User ID=sa;Password=pal;Provider=SQLOLEDB";
+                connection.Open(connectionstring);
+                var rs = new ActiveXObject("ADODB.Recordset");
+                rs.Open("insert into mca values('" + name1+ "','" + rolln+ "')", connection);
+                alert("Insert Record Successfuly");
+                txtid.value = " ";
+            }
+            else
+            {            
+                alert("Please Enter Employee \n Id \n Name \n Salary \n City ");
+
+            }
+        }
+        function ShowAll()
+        {
+                var connection = new ActiveXObject("ADODB.Connection");
+                var connectionstring = "Data Source=.;Initial Catalog=system;Persist Security Info=True;User ID=sa;Password=pal;Provider=SQLOLEDB";
+                connection.Open(connectionstring);
+                var rs = new ActiveXObject("ADODB.Recordset");
+                rs.Open("select * from mca ", connection);
+                rs.MoveFirst();
+                var span = document.createElement("span");
+                span.style.color = "Blue";
+                span.innerText =  "  Name " + "  rollno" ;
+                document.body.appendChild(span);
+                while (!rs.eof)
+                {
+                    var span = document.createElement("span");
+                    span.style.color = "green";
+                    span.innerText = "\n " + rs.fields(0) + " |  " + rs.fields(1);
+                    document.body.appendChild(span);
+                    rs.MoveNext();
+                }
+                rs.close();
+                connection.close();
+            } 
+    </script>
+    <style type="text/css">
+        #main
+        {
+            height: 264px;
+        }
+        #ShowRecord
+        {
+            width: 67px;
+            z-index: 1;
+            left: 20px;
+            top: 257px;
+            position: absolute;
+        }
+        #showall
+        {
+            z-index: 1;
+            left: 114px;
+            top: 257px;
+            position: absolute;
+        }
+    </style>
+</head>
+<body style="height: 431px">
+        <p style="font-size: medium; color: #000000;">
+            Name&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <input id="name" type="text" /></p>
+        <p style="font-size: medium; color: #000000;">
+            roll no&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <input id="roll" type="text" /></p>
+    <input id="ShowRecord" type="button" value="Insert" onclick="InsertRecord()" />&nbsp;
+    <input id="showall" type="button" value="Show All Record" onclick="ShowAll()" />
+    </body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <title>form Example</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="formstyle1.css">
+</head>
+<script  src="contactformjs.js"></script>
+<body>
+
+<div class="container">
+    <div class="row">
+    <div class="col-md-3 col-xs-0"></div>
+    <div class="col-md-6 col-xs-11">
+     <form class="dark-matter">
+    <h3>Student Contact Form</h3>
+    
+    <label>
+        Your Name :
+        <input id="name" type="text" name="name" placeholder="Your Full Name" />
+    </label>
+    <label>
+        Your Gender:
+        &nbsp;&nbsp;<input id="radiogenvalue1" type="radio" name="radio"value="Male"/>&nbsp;&nbsp;Male&nbsp;&nbsp;
+        &nbsp;&nbsp;<input id="radiogenvalue2" type="radio" name="radio"value="Female"/>&nbsp;&nbsp;Female
+    </label>
+    <label><br>
+        <span>Your Email :</span>
+        <input id="email" type="email" name="email" placeholder="Valid Email Address" />
+    </label>
+    <label>
+        <span>Subject :</span>
+                            <input type="checkbox" id="checksubvalue1" value="c">&nbsp;&nbsp;C
+                            <input type="checkbox" id="checksubvalue2" value="c++">&nbsp;&nbsp;C++
+                            <input type="checkbox" id="checksubvalue3" value="java">&nbsp;&nbsp;Java
+    </label> <br>
+
+    <label>
+        <span>Message :</span>
+        <textarea id="message" name="message" placeholder="Your Message to Us"></textarea>
+    </label> 
+     <label>
+        <span>Year :</span><select name="selection" id="year">
+        <option value="select">Select</option>
+        <option value="2015">2015</option>
+        <option value="2016">2016</option>
+        </select>
+    </label>    
+     <label>
+        <span>&nbsp;</span> 
+        <input type="button" class="button" value="Submit" onclick="contactformdata()"/> 
+    </label>    
+</form></div>
+<div class="col-md-3 col-xs-0"></div>
+</div></div>
+</body>
+</html>
